@@ -1,9 +1,12 @@
-CONFIGURACION
+<h1>CONFIGURACION</h1>
 
 Para configurar, descargar la base de datos sistema_pacientes.sql, ejecutar el sql en una nueva base de datos.
 
+-------------------------------------------------------------
+
 Configurar el archivo .env
 
+<pre>
 APP_NAME=Laravel
 APP_ENV=local
 APP_KEY=base64:e0tCD4035XdUzUiQ5QxSjcweJaleELS8S6mxgrDtk3w=
@@ -66,13 +69,13 @@ VITE_PUSHER_SCHEME="${PUSHER_SCHEME}"
 VITE_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 
 JWT_SECRET=fkdGNcWBPc7MIPb1klyHXV8f6ZPiI4dhJ8RpYeZooNYMQ7mPwgCf9ec8r44vxxt1
-
+</pre>
 -------------------------------------------------------------------------------------------------
 
-API_URL modificarla al ambiente correcto
-API_URL modificarla al ambiente correcto, debe dirigirse a la carpeta public de laravel
+<p>API_URL modificarla al ambiente correcto</p>
+<p>API_URL modificarla al ambiente correcto, debe dirigirse a la carpeta public de laravel</p>
 
-
+-------------------------------------------------------------------------
 
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
