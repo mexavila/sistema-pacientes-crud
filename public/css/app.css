@@ -1,0 +1,12 @@
+.invalid-feedback {
+    display: block;
+    color: #dc3545;
+}
+
+.card {
+    border-radius: 10px;
+}
+
+.card-header {
+    border-radius: 10px 10px 0 0 !important;
+}

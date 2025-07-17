@@ -2,16 +2,46 @@
 
 namespace App\Http\Middleware;
 
-use Illuminate\Auth\Middleware\Authenticate as Middleware;
+use Closure;
+use Illuminate\Auth\Middleware\Authenticate as BaseAuthenticate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpFoundation\Response;
 
-class Authenticate extends Middleware
+class Authenticate extends BaseAuthenticate
 {
     /**
-     * Get the path the user should be redirected to when they are not authenticated.
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @param  string[]  ...$guards
+     * @return mixed
+     *
+     * @throws \Illuminate\Auth\AuthenticationException
      */
-    protected function redirectTo(Request $request): ?string
+    
+
+    /**
+     * Determine if the user is authenticated.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  array  $guards
+     * @return bool
+     */
+    protected function authenticate($request, array $guards): bool
     {
-        return $request->expectsJson() ? null : route('login');
+        if (empty($guards)) {
+            $guards = [null];
+        }
+
+        foreach ($guards as $guard) {
+            if (Auth::guard($guard)->check()) {
+                Auth::shouldUse($guard);
+                return true;
+            }
+        }
+
+        return false;
     }
 }
